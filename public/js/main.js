@@ -1,4 +1,4 @@
-let launchDate = new Date("April 18, 2021 00:00:00").getTime();
+let launchDate = new Date("March 16, 2021 00:00:00").getTime();
 
 // Timer avançant à chaque seconde
 let timer = setInterval(tick, 1000);
@@ -6,6 +6,7 @@ let timer = setInterval(tick, 1000);
 function tick() {
     // jour actuel
     let now = new Date().getTime();
+    console.log(now);
     // temps restant avant d'atteindre 0 (disponibilité/ouverture)
     let time = launchDate - now;
 
@@ -25,7 +26,7 @@ function tick() {
 
         // algorithm pour calculer les minutes
         let minutes = Math.floor((time % (1000 *60 *60 *24))/ (1000 *60));
-        
+
         if (minutes < 10){ 
             minutes = "0" + minutes
         }
